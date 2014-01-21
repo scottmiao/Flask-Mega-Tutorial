@@ -1,4 +1,5 @@
 venv/
+db_repository/
 *.pyc
 *.db
 *.swp
