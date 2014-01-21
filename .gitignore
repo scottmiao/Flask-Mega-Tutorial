@@ -1,5 +1,6 @@
 venv/
 db_repository/
+tmp/
 *.pyc
 *.db
 *.swp
