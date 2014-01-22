@@ -14,4 +14,5 @@ from app import views, models
 
 lm = LoginManager()
 lm.init_app(app)
+lm.login_view = 'login'  # Flask-Login needs to know what view logs users in.
 oid = OpenID(app, os.path.join(basedir, 'tmp'))
