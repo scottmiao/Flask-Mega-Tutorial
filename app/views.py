@@ -17,9 +17,10 @@ def load_user(id):
 
 @app.route('/')
 @app.route('/index')
+@login_required
 def index():
-    user = {'nickname': 'Miao'}  # fake user
-    posts = [  # fake array of posts
+    user = g.user
+    posts = [
         {
             'author': {'nickname': 'John'},
             'body': 'Beautiful day in Portland!'
@@ -29,7 +30,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template("index.html",
+    return render_template('index.html',
                            title='Home',
                            user=user,
                            posts=posts)
