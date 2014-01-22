@@ -5,6 +5,11 @@ from forms import LoginForm
 from models import User, ROLE_USER, ROLE_ADMIN
 
 
+@app.before_request
+def before_request():
+    g.user = current_user
+
+
 @lm.user_loader
 def load_user(id):
     return User.query.get(int(id))
